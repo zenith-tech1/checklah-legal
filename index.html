@@ -2,152 +2,194 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CheckLah — Privacy Policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CheckLah Privacy Policy</title>
 <style>
   :root {
-    --paper: #F3F1E9;
-    --ink: #1F2A44;
-    --stamp-red: #B23A2E;
-    --charcoal: #262622;
-    --rule: rgba(31,42,68,0.15);
+    --bg: #F3F1E9;
+    --fg: #1F2A44;
+    --muted: rgba(31, 42, 68, 0.66);
+    --card: #FBF9F2;
+    --border: rgba(31, 42, 68, 0.16);
+    --accent: #B23A2E;
+    --accent-2: #1E5C99;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1B1A17;
+      --fg: #F3F1E9;
+      --muted: rgba(243, 241, 233, 0.66);
+      --card: #242320;
+      --border: rgba(243, 241, 233, 0.16);
+      --accent: #DD6B5C;
+      --accent-2: #5B9BDB;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1B1A17;
+    --fg: #F3F1E9;
+    --muted: rgba(243, 241, 233, 0.66);
+    --card: #242320;
+    --border: rgba(243, 241, 233, 0.16);
+    --accent: #DD6B5C;
+    --accent-2: #5B9BDB;
+    color-scheme: dark;
   }
   * { box-sizing: border-box; }
+  html, body { margin: 0; }
   body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 48px 80px;
   }
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 48px 24px 96px;
+  main { max-width: 680px; margin: 0 auto; }
+  h1, h2 {
+    font-family: "Fraunces", Georgia, serif;
+    color: var(--fg);
+    text-wrap: balance;
   }
-  h1 {
-    font-size: 28px;
-    margin-bottom: 4px;
+  .eyebrow {
+    font-family: "Space Mono", "SF Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
   }
-  .updated {
-    color: var(--charcoal);
-    opacity: 0.65;
-    font-size: 14px;
-    margin-bottom: 36px;
+  .ticket-header {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 28px 20px;
   }
-  h2 {
-    font-size: 18px;
-    margin-top: 40px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--rule);
+  .ticket-header h1 { font-size: clamp(28px, 6vw, 36px); margin: 10px 0 4px; font-weight: 600; }
+  .ticket-header .tagline { color: var(--muted); font-size: 14px; margin: 0 0 18px; }
+  .ticket-header .meta-row {
+    display: flex; flex-wrap: wrap; gap: 6px 18px;
+    font-family: "Space Mono", monospace; font-size: 12px; color: var(--muted);
+    border-top: 1px dashed var(--border); padding-top: 14px;
   }
-  p, li { font-size: 16px; }
-  ul { padding-left: 22px; }
-  a { color: var(--stamp-red); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .badge {
-    display: inline-block;
-    border: 1.5px solid var(--stamp-red);
-    color: var(--stamp-red);
-    border-radius: 999px;
-    padding: 4px 14px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    margin-bottom: 20px;
+  .tldr {
+    margin-top: 28px; background: var(--card); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-2); border-radius: 8px; padding: 18px 22px;
   }
-  footer {
-    margin-top: 56px;
-    padding-top: 20px;
-    border-top: 2px solid var(--rule);
-    font-size: 13px;
-    opacity: 0.6;
+  .tldr .eyebrow { color: var(--accent-2); }
+  .tldr ul { margin: 10px 0 0; padding-left: 20px; }
+  .tldr li { margin: 6px 0; line-height: 1.5; }
+  section { margin-top: 40px; }
+  .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .section-num { font-family: "Space Mono", monospace; font-size: 13px; color: var(--accent); flex-shrink: 0; }
+  h2 { font-size: 20px; font-weight: 600; margin: 0; }
+  h3 { font-family: "Public Sans", sans-serif; font-size: 15px; font-weight: 700; margin: 20px 0 6px; }
+  p { max-width: 66ch; line-height: 1.65; margin: 10px 0; }
+  ul { max-width: 66ch; line-height: 1.65; padding-left: 20px; }
+  li { margin: 6px 0; }
+  a { color: var(--accent-2); }
+  .fine {
+    margin-top: 56px; padding-top: 20px; border-top: 1px dashed var(--border);
+    color: var(--muted); font-size: 13px; line-height: 1.6;
   }
+  .contact {
+    margin-top: 40px; background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 20px 22px;
+  }
+  .contact h2 { font-size: 18px; }
+  .email { font-family: "Space Mono", monospace; font-size: 15px; color: var(--fg); }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="wrap">
-  <div class="badge">No account. No tracking. No ads.</div>
-  <h1>CheckLah — Privacy Policy</h1>
-  <p class="updated">Last updated: 30 October 2026</p>
+<main>
+  <div class="ticket-header">
+    <span class="eyebrow">Privacy Policy</span>
+    <h1>CheckLah</h1>
+    <p class="tagline">4D &amp; Toto ticket checker — Singapore</p>
+    <div class="meta-row">
+      <span>EFFECTIVE&nbsp;02&nbsp;NOV&nbsp;2026</span>
+      <span>VER&nbsp;1.0</span>
+    </div>
+  </div>
 
-  <p>CheckLah ("the App", "we", "our") is a utility app that scans and checks
-  Singapore Pools 4D and Toto lottery tickets against historical draw
-  results. This page explains what information the App accesses, what it
-  does with it, and what it does not do.</p>
+  <div class="tldr">
+    <span class="eyebrow">In short</span>
+    <ul>
+      <li>CheckLah doesn't need an account or login — there's nothing to sign up for.</li>
+      <li>Your scanned tickets and favorite numbers stay on your device. We never see them, and they're never uploaded anywhere.</li>
+      <li>A ticket photo is read entirely on your device to extract the numbers — the photo itself is never sent to a server.</li>
+      <li>CheckLah shows ads through Google AdMob, which collects some advertising data to do that — details in Section 1.</li>
+      <li>You can clear your data anytime from the History screen, or by deleting the app.</li>
+    </ul>
+  </div>
 
-  <h2>Summary</h2>
-  <p>CheckLah does not require you to create an account, does not collect
-  personal information, does not track you across apps or websites, and
-  does not contain advertising. Everything the App does with a scanned
-  ticket happens on your own device.</p>
+  <section>
+    <div class="section-head"><span class="section-num">01</span><h2>Information we collect</h2></div>
 
-  <h2>Information we access, and why</h2>
-  <ul>
-    <li><strong>Camera.</strong> Used only when you choose to scan a physical
-    lottery ticket. Photos you take are processed on your device (text
-    recognition happens locally) and are not uploaded to us or to any
-    third party.</li>
-    <li><strong>Photo library.</strong> Used only if you choose "Choose from
-    Photos" to scan a ticket image you already have. Same as above — the
-    image is read and processed locally, never uploaded.</li>
-    <li><strong>Motion / shake gesture.</strong> Used only to detect a
-    physical shake of your device, which triggers the "Lucky Numbers"
-    feature. No motion data is stored or transmitted anywhere.</li>
-  </ul>
+    <h3>Stored only on your device</h3>
+    <p>CheckLah keeps the following directly on your phone, in the app's own local database — never on a server we operate:</p>
+    <ul>
+      <li>Scanned ticket details you've checked (game type, numbers, stake, date, and result)</li>
+      <li>Favorite / watchlisted numbers</li>
+      <li>App settings and preferences</li>
+    </ul>
+    <p>This data is removed when you delete the record (swipe-to-delete in History or Favorites) or when you uninstall CheckLah. If your device backs up to iCloud or a computer, that backup may include this local data as part of your device's normal backup process — that's managed by Apple's own iOS settings, not by CheckLah.</p>
 
-  <h2>Data stored on your device</h2>
-  <p>The App keeps a local, on-device database of:</p>
-  <ul>
-    <li>Historical 4D and Toto draw results (bundled with the App and
-    periodically refreshed — see "Network access" below).</li>
-    <li>Your own scan history, favorites/watchlist, and app preferences.</li>
-  </ul>
-  <p>None of this is linked to your identity, and none of it is uploaded
-  to us. If you delete the App, this data is deleted with it.</p>
+    <h3>Camera and photos</h3>
+    <p>When you grant camera access, CheckLah uses it to photograph a physical ticket. That photo is read on-device using Google's ML Kit text recognition to extract the printed numbers — the image is processed entirely on your phone and is never uploaded to any server, by us or anyone else. If you choose "Choose from Photos" instead, the same on-device processing applies to the single photo you select.</p>
 
-  <h2>Network access</h2>
-  <p>The App periodically downloads a small, publicly-hosted file
-  containing recent official 4D/Toto draw results, so your results stay
-  up to date without you doing anything. This is a one-way download of
-  public lottery-result data — the App does not send any personal
-  information, device identifiers, or usage data as part of this, or at
-  any other time.</p>
+    <h3>Advertising data (Google AdMob)</h3>
+    <p>CheckLah shows ads through Google's AdMob (Google Mobile Ads SDK) to help keep the app free. To serve and measure those ads, Google and its advertising partners may collect device and advertising identifiers, an approximate location derived from your IP address, and information about how you interact with ads. This collection is governed by Google's own policies, not CheckLah's — see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a href="https://support.google.com/admob/answer/9012903" target="_blank" rel="noopener">how Google's advertising partners use data</a>.</p>
+    <p>If you're in the EEA, UK, or Switzerland, CheckLah shows a consent message the first time you open the app so you can choose whether to allow this, including a direct option to decline.</p>
 
-  <h2>What we do not do</h2>
-  <ul>
-    <li>We do not require or support creating an account.</li>
-    <li>We do not collect your name, email, location, contacts, or any
-    other personal identifier.</li>
-    <li>We do not use analytics or advertising SDKs, and the App shows no
-    ads.</li>
-    <li>We do not track you across other companies' apps or websites.</li>
-    <li>We do not sell or share any data, because we do not collect any to
-    begin with.</li>
-  </ul>
+    <h3>Draw results</h3>
+    <p>CheckLah fetches publicly published 4D and Toto draw results from a server we host, so you see current results without needing an app update. This is a standard network request and doesn't include anything that identifies you beyond what's inherent to any internet connection, such as your IP address, used only to deliver the response.</p>
+  </section>
 
-  <h2>Children's privacy</h2>
-  <p>CheckLah is a general-audience utility tool and is not directed at
-  children. It does not knowingly collect information from anyone, of any
-  age, because it does not collect personal information at all.</p>
+  <section>
+    <div class="section-head"><span class="section-num">02</span><h2>How we use this information</h2></div>
+    <p>We use it to let you scan and check tickets against draw results, and to show ads that help keep CheckLah free. We don't use your information for anything beyond what's described in this policy, and we don't sell it.</p>
+  </section>
 
-  <h2>Not a betting or gambling service</h2>
-  <p>CheckLah does not let you place bets, purchase tickets, or wager
-  money of any kind. It only reads a ticket you already own (via your
-  camera or photo library) and compares the numbers printed on it against
-  publicly published Singapore Pools draw results. CheckLah is developed
-  independently of Singapore Pools and is not affiliated with or endorsed
-  by Singapore Pools.</p>
+  <section>
+    <div class="section-head"><span class="section-num">03</span><h2>Sharing</h2></div>
+    <p>We don't share your locally-stored ticket or favorites data with anyone — we have no access to it in the first place, since it lives only on your device. Advertising data is shared with Google and its advertising partners as described in Section 1, under their own privacy terms.</p>
+  </section>
 
-  <h2>Changes to this policy</h2>
-  <p>If this policy changes, the updated version will be posted on this
-  same page with a new "Last updated" date.</p>
+  <section>
+    <div class="section-head"><span class="section-num">04</span><h2>Your choices</h2></div>
+    <ul>
+      <li><strong>Delete local data</strong> — swipe to delete any scanned ticket in History or any entry in Favorites, or uninstall CheckLah to remove all of it from your device.</li>
+      <li><strong>Ad personalization</strong> — manage this through the in-app consent message (EEA/UK/Switzerland) or your device's own ad-tracking settings, under iOS Settings → Privacy &amp; Security.</li>
+      <li><strong>Camera and Photos access</strong> — change these anytime under iOS Settings → CheckLah.</li>
+    </ul>
+  </section>
 
-  <h2>Contact us</h2>
-  <p>Questions about this policy or the App can be sent to
-  <a href="mailto:checklah.app@gmail.com">checklah.app@gmail.com</a>.</p>
+  <section>
+    <div class="section-head"><span class="section-num">05</span><h2>Children's privacy</h2></div>
+    <p>CheckLah isn't directed at children, and we don't knowingly collect information from children.</p>
+  </section>
 
-  <footer>CheckLah — a Singapore Pools 4D/Toto ticket checker.</footer>
-</div>
+  <section>
+    <div class="section-head"><span class="section-num">06</span><h2>International users</h2></div>
+    <p>CheckLah is built around Singapore Pools' 4D and Toto results and is intended mainly for use in Singapore. If you use it from elsewhere, including the EEA, UK, or Switzerland, the practices and choices described in this policy still apply.</p>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="section-num">07</span><h2>Changes to this policy</h2></div>
+    <p>We may update this policy as CheckLah changes. The effective date at the top reflects the latest version.</p>
+  </section>
+
+  <div class="contact">
+    <h2>Questions?</h2>
+    <p>Email us at <span class="email">checklah.app@gmail.com</span>.</p>
+  </div>
+
+  <p class="fine">This Privacy Policy covers how CheckLah handles data. For information about CheckLah's relationship to Singapore Pools and the accuracy of displayed results, see the Disclaimer screen inside the app.</p>
+</main>
 </body>
 </html>
