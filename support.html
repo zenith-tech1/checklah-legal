@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CheckLah Support</title>
+<style>
+  :root {
+    --bg: #F3F1E9;
+    --fg: #1F2A44;
+    --muted: rgba(31, 42, 68, 0.66);
+    --card: #FBF9F2;
+    --border: rgba(31, 42, 68, 0.16);
+    --accent: #B23A2E;
+    --accent-2: #1E5C99;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1B1A17;
+      --fg: #F3F1E9;
+      --muted: rgba(243, 241, 233, 0.66);
+      --card: #242320;
+      --border: rgba(243, 241, 233, 0.16);
+      --accent: #DD6B5C;
+      --accent-2: #5B9BDB;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1B1A17;
+    --fg: #F3F1E9;
+    --muted: rgba(243, 241, 233, 0.66);
+    --card: #242320;
+    --border: rgba(243, 241, 233, 0.16);
+    --accent: #DD6B5C;
+    --accent-2: #5B9BDB;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 48px 80px;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  h1, h2 {
+    font-family: "Fraunces", Georgia, serif;
+    color: var(--fg);
+    text-wrap: balance;
+  }
+  .eyebrow {
+    font-family: "Space Mono", "SF Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .ticket-header {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 28px 20px;
+  }
+  .ticket-header h1 { font-size: clamp(28px, 6vw, 36px); margin: 10px 0 4px; font-weight: 600; }
+  .ticket-header .tagline { color: var(--muted); font-size: 14px; margin: 0; }
+  .contact {
+    margin-top: 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-2);
+    border-radius: 8px;
+    padding: 20px 22px;
+  }
+  .contact .eyebrow { color: var(--accent-2); }
+  .email {
+    font-family: "Space Mono", monospace;
+    font-size: 17px;
+    color: var(--fg);
+    display: inline-block;
+    margin-top: 6px;
+  }
+  .contact p { margin: 10px 0 0; color: var(--muted); font-size: 14px; }
+  section { margin-top: 36px; }
+  h2 { font-size: 18px; font-weight: 600; margin: 0 0 8px; }
+  p { max-width: 66ch; line-height: 1.65; margin: 8px 0; }
+  a { color: var(--accent-2); }
+  .faq { margin-top: 20px; }
+  .faq-item { margin-top: 22px; }
+  .faq-item h2 { font-size: 16px; }
+  .fine {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+  <div class="ticket-header">
+    <span class="eyebrow">Support</span>
+    <h1>CheckLah</h1>
+    <p class="tagline">4D &amp; Toto ticket checker — Singapore</p>
+  </div>
+
+  <div class="contact">
+    <span class="eyebrow">Get in touch</span><br>
+    <span class="email">checklah.app@gmail.com</span>
+    <p>We read every email and usually reply within a few days. Include your iOS version and, if it's a scanning issue, what kind of ticket (4D or Toto) you were checking.</p>
+  </div>
+
+  <section class="faq">
+    <div class="faq-item">
+      <h2>Why can't CheckLah read my ticket?</h2>
+      <p>Good lighting and a flat, unfolded ticket make the biggest difference. If a number still looks wrong after scanning, use the review screen's edit option to correct it before checking — this is built in specifically because ticket text can sometimes be misread.</p>
+    </div>
+    <div class="faq-item">
+      <h2>Does CheckLah need an account?</h2>
+      <p>No. There's no sign-up or login. Your scan history and favorites are stored only on your device.</p>
+    </div>
+    <div class="faq-item">
+      <h2>Is CheckLah affiliated with Singapore Pools?</h2>
+      <p>No. CheckLah is developed independently and is not affiliated with, endorsed by, or sponsored by Singapore Pools. It only checks tickets you already own against publicly published results.</p>
+    </div>
+    <div class="faq-item">
+      <h2>Where's your privacy policy?</h2>
+      <p>Here: <a href="https://zenith-tech1.github.io/checklah-legal/">zenith-tech1.github.io/checklah-legal</a></p>
+    </div>
+  </section>
+
+  <p class="fine">For anything not covered here, email <span class="email">checklah.app@gmail.com</span> and we'll help you out.</p>
+</main>
+</body>
+</html>
